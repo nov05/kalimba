@@ -9,10 +9,33 @@ body {
 }
 
 header {
-    text-align: center;
     padding: 40px;
     background: #222;
     color: white;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+.header-text {
+    text-align: center;
+}
+
+.header-text h1 {
+    margin: 0;
+}
+
+.header-text p {
+    margin-top: 10px;
 }
 
 .container {
