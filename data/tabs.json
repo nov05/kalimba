@@ -3,8 +3,7 @@
         "title": "The Sound of Silence",
         "artist": "Simon & Garfunkel",
         "tags": [
-            "21-key",
-            "17-key"
+            "21-key"
         ],
         "pdf": "pdf/20260725_the-sound-of-silence.pdf"
     },
@@ -12,7 +11,8 @@
         "title": "Canon in D",
         "artist": "Pachelbel",
         "tags": [
-            "17-key"
+            "17-key",
+            "21-key"
         ],
         "pdf": "pdf/20230722_canon-in-d.pdf"
     }
