@@ -1,0 +1,118 @@
+let songs = [];
+const songBox =
+    document.getElementById("songs");
+const title =
+    document.getElementById("title");
+
+fetch("data/tabs.json")
+    .then(res => res.json())
+    .then(data => {
+        songs = data;
+        loadFromURL();
+    });
+
+function displaySongs(list) {
+    songBox.innerHTML = "";
+    if (list.length === 0) {
+        songBox.innerHTML =
+            "<p>No tabs found.</p>";
+        return;
+    }
+    list.forEach(song => {
+        let tags = "";
+        song.tags.forEach(t => {
+            tags +=
+                `
+<span class="tag">
+${t}
+</span>
+`;
+        });
+        songBox.innerHTML +=
+            `
+<div class="card">
+<h3>
+${song.title}
+</h3>
+<p>
+${song.artist}
+</p>
+<div>
+${tags}
+</div>
+<a class="pdf"
+href="${song.pdf}"
+target="_blank">
+View PDF
+</a>
+</div>
+`;
+    });
+}
+
+function filterTag(tag) {
+    let url =
+        new URL(window.location);
+    url.searchParams.set(
+        "tag",
+        tag
+    );
+    history.pushState(
+        {},
+        "",
+        url
+    );
+    let result =
+        songs.filter(song =>
+            song.tags.includes(tag)
+        );
+    title.innerHTML =
+        tag + " Tabs";
+    displaySongs(result);
+}
+
+function showAll() {
+    history.pushState(
+        {},
+        "",
+        window.location.pathname
+    );
+    title.innerHTML =
+        "All Tabs";
+    displaySongs(songs);
+}
+
+document
+    .getElementById("search")
+    .addEventListener(
+        "input",
+        function () {
+            let keyword =
+                this.value.toLowerCase();
+            let result =
+                songs.filter(song =>
+                    song.title
+                        .toLowerCase()
+                        .includes(keyword)
+                    ||
+                    song.artist
+                        .toLowerCase()
+                        .includes(keyword)
+                );
+            displaySongs(result);
+        });
+
+function loadFromURL() {
+    let params =
+        new URLSearchParams(
+            window.location.search
+        );
+    let tag =
+        params.get("tag");
+    if (tag) {
+        filterTag(tag);
+    }
+    else {
+        displaySongs(songs);
+    }
+}
