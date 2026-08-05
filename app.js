@@ -30,21 +30,21 @@ ${t}
         });
         songBox.innerHTML +=
             `
-<div class="card">
+<div class="card"
+onclick="openPDF('${song.pdf}')">
+
 <h3>
 ${song.title}
 </h3>
+
 <p>
 ${song.artist}
 </p>
+
 <div>
 ${tags}
 </div>
-<a class="pdf"
-href="${song.pdf}"
-target="_blank">
-View PDF
-</a>
+
 </div>
 `;
     });
@@ -115,4 +115,8 @@ function loadFromURL() {
     else {
         displaySongs(songs);
     }
+}
+
+function openPDF(pdf) {
+    window.open(pdf, "_blank");
 }
