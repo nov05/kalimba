@@ -15,15 +15,14 @@ header {
 }
 
 .header-content {
-    display: flex;
+    display: grid;
+    grid-template-columns: 80px 1fr 80px;
     align-items: center;
-    justify-content: center;
-    gap: 30px;
 }
 
 .logo {
-    width:70px;
-    height:70px;
+    width:120px;
+    height:120px;
     object-fit:contain;
 }
 
