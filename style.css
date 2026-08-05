@@ -15,15 +15,18 @@ header {
 }
 
 .header-content {
-    display: grid;
-    grid-template-columns: 80px 1fr 80px;
-    align-items: center;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 .logo {
     width:120px;
     height:120px;
     object-fit:contain;
+    position:absolute;
+    right:calc(50% + 180px);
 }
 
 .header-text {
