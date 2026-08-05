@@ -31,3 +31,7 @@ kalimba/
     ├── sound-of-silence.pdf
     └── canon-in-d.pdf
 ```
+
+## Logs
+
+* 2026-08-05 The website was created.
