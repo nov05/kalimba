@@ -12,6 +12,27 @@ fetch("data/tabs.json")
     });
 
 function displaySongs(list) {
+    let links = "";
+    if (song.colab) {
+        links += `
+        <a class="icon-link"
+           href="${song.colab}"
+           target="_blank"
+           onclick="event.stopPropagation();">
+            <img src="assets/20260805_logo_colab.png" alt="Colab">
+        </a>
+    `;
+    }
+    if (song.youtube) {
+        links += `
+        <a class="icon-link"
+           href="${song.youtube}"
+           target="_blank"
+           onclick="event.stopPropagation();">
+            <img src="assets/20260805_logo_youtube.png" alt="YouTube">
+        </a>
+    `;
+    }
     songBox.innerHTML = "";
     if (list.length === 0) {
         songBox.innerHTML =
@@ -23,28 +44,16 @@ function displaySongs(list) {
         song.tags.forEach(t => {
             tags +=
                 `
-<span class="tag">
-${t}
-</span>
+<span class="tag">${t}</span>
 `;
         });
         songBox.innerHTML +=
             `
-<div class="card"
-onclick="openPDF('${song.pdf}')">
-
-<h3>
-${song.title}
-</h3>
-
-<p>
-${song.artist}
-</p>
-
-<div>
-${tags}
-</div>
-
+<div class="card"onclick="openPDF('${song.pdf}')">
+    <h3>${song.title}</h3>
+    <p>${song.artist}</p>
+    <div>${tags}</div>
+    <div class="links">${links}</div>
 </div>
 `;
     });
