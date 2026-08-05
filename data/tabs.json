@@ -1,15 +1,5 @@
 [
     {
-        "title": "The Sound of Silence",
-        "artist": "Simon & Garfunkel",
-        "tags": [
-            "21-key"
-        ],
-        "pdf": "pdf/20260725_the-sound-of-silence.pdf",
-        "youtube": "https://www.youtube.com/embed/wfD1hG6wh9g",
-        "colab": "https://colab.research.google.com/drive/1qw4aG77bXoeMSmCBlPPYU6LqAHcZ-Zt6"
-    },
-    {
         "title": "Canon in D",
         "artist": "Johann Pachelbel",
         "tags": [
@@ -19,5 +9,15 @@
         "pdf": "pdf/20230722_canon-in-d.pdf",  
         "youtube": "https://www.youtube.com/embed/MkP3gRe-_4w",
         "colab": "https://colab.research.google.com/drive/1w93pM47Os2YSGNsdM1XUtOW6yPiFZR4Q"
+    },
+    {
+        "title": "The Sound of Silence",
+        "artist": "Simon & Garfunkel",
+        "tags": [
+            "21-key"
+        ],
+        "pdf": "pdf/20260725_the-sound-of-silence.pdf",
+        "youtube": "https://www.youtube.com/embed/wfD1hG6wh9g",
+        "colab": "https://colab.research.google.com/drive/1qw4aG77bXoeMSmCBlPPYU6LqAHcZ-Zt6"
     }
 ]
