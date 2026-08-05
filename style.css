@@ -131,3 +131,16 @@ button {
     text-decoration: none;
     border-radius: 8px;
 }
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.footer-logo {
+    width: 30px;
+    height: 30px;
+    object-fit:contain;
+}

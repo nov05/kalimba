@@ -24,10 +24,10 @@ function displaySongs(list) {
             links += `
                 <a class="icon-link"
                 href="${song.youtube}"
-                title="Open video in YouTube"
+                title="Watch video on YouTube"
                 target="_blank"
                 onclick="event.stopPropagation();">
-                    <img src="assets/20260805_logo_youtube.png" alt="YouTube">
+                    <img src="assets/20260805_logo_youtube.png" alt="YouTube logo">
                 </a>
                 `;
         }
@@ -38,7 +38,7 @@ function displaySongs(list) {
                 title="Open notebook in Google Colab"
                 target="_blank"
                 onclick="event.stopPropagation();">
-                    <img src="assets/20260805_logo_colab.png" alt="Colab">
+                    <img src="assets/20260805_logo_colab.png" alt="Google Colab logo">
                 </a>
                 `;
         }
