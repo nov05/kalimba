@@ -20,72 +20,60 @@ function displaySongs(list) {
     }
     list.forEach(song => {
         let links = "";
-        if (song.colab) {
-            links += `
-            <a class="icon-link"
-            href="${song.colab}"
-            target="_blank"
-            onclick="event.stopPropagation();">
-                <img src="assets/20260805_logo_colab.png" alt="Colab">
-            </a>
-            `;
-        }
         if (song.youtube) {
             links += `
-            <a class="icon-link"
-            href="${song.youtube}"
-            target="_blank"
-            onclick="event.stopPropagation();">
-                <img src="assets/20260805_logo_youtube.png" alt="YouTube">
-            </a>
-            `;
+                <a class="icon-link"
+                href="${song.youtube}"
+                title="Open video in YouTube"
+                target="_blank"
+                onclick="event.stopPropagation();">
+                    <img src="assets/20260805_logo_youtube.png" alt="YouTube">
+                </a>
+                `;
+        }
+        if (song.colab) {
+            links += `
+                <a class="icon-link"
+                href="${song.colab}"
+                title="Open notebook in Google Colab"
+                target="_blank"
+                onclick="event.stopPropagation();">
+                    <img src="assets/20260805_logo_colab.png" alt="Colab">
+                </a>
+                `;
         }
         let tags = "";
         song.tags.forEach(t => {
             tags += `
-            <span class="tag">${t}</span>
-            `;
+                <span class="tag">${t}</span>
+                `;
         });
         songBox.innerHTML += `
-        <div class="card"onclick="openPDF('${song.pdf}')">
-            <h3>${song.title}</h3>
-            <p>${song.artist}</p>
-            <div>${tags}</div>
-            <div class="links">${links}</div>
-        </div>
-        `;
+            <div class="card"onclick="openPDF('${song.pdf}')">
+                <h3>${song.title}</h3>
+                <p>${song.artist}</p>
+                <div>${tags}</div>
+                <div class="links">${links}</div>
+            </div>
+            `;
     });
 }
 
 function filterTag(tag) {
-    let url =
-        new URL(window.location);
-    url.searchParams.set(
-        "tag",
-        tag
-    );
-    history.pushState(
-        {},
-        "",
-        url
-    );
+    let url = new URL(window.location);
+    url.searchParams.set("tag", tag);
+    history.pushState({}, "", url);
     let result =
         songs.filter(song =>
             song.tags.includes(tag)
         );
-    title.innerHTML =
-        tag + " Tabs";
+    title.innerHTML = tag + " Tabs";
     displaySongs(result);
 }
 
 function showAll() {
-    history.pushState(
-        {},
-        "",
-        window.location.pathname
-    );
-    title.innerHTML =
-        "All Tabs";
+    history.pushState({}, "", window.location.pathname);
+    title.innerHTML = "All Tabs";
     displaySongs(songs);
 }
 
