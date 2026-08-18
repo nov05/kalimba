@@ -112,6 +112,12 @@ function loadFromURL() {
     }
 }
 
-function openPDF(pdf) {
-    window.open(pdf, "_blank");
-}
+const amazonBox =
+    document.getElementById("amazon-box");
+
+const amazonClose =
+    document.getElementById("amazon-close");
+
+amazonClose.addEventListener("click", () => {
+    amazonBox.style.display = "none";
+});
