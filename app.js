@@ -115,6 +115,5 @@ function loadFromURL() {
 const amazonBox = document.getElementById("amazon-box");
 const amazonClose = document.getElementById("amazon-close");
 amazonClose.onclick = function () {
-    console.log("CLICKED");
     amazonBox.style.display = "none";
 };
