@@ -112,21 +112,8 @@ function loadFromURL() {
     }
 }
 
-// const amazonBox =
-//     document.getElementById("amazon-box");
-
-// const amazonClose =
-//     document.getElementById("amazon-close");
-
-// amazonClose.addEventListener("click", () => {
-//     amazonBox.style.display = "none";
-// });
-
 const amazonBox = document.getElementById("amazon-box");
 const amazonClose = document.getElementById("amazon-close");
-
-if (amazonBox && amazonClose) {
-    amazonClose.onclick = function () {
-        amazonBox.style.display = "none";
-    };
-}
+amazonClose.onclick = function () {
+    amazonBox.style.display = "none";
+};
