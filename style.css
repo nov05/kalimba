@@ -192,6 +192,11 @@ footer {
     text-decoration: none;
 }
 
+.amazon-link:hover,
+.temu-link:hover {
+    text-decoration: underline;
+}
+
 .affiliate-note {
     display: block;
     margin-top: 4px;
