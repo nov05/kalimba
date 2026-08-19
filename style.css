@@ -188,6 +188,8 @@ footer {
 .amazon-link,
 .temu-link {
     display: block;
+    color: #000;
+    text-decoration: none;
 }
 
 .affiliate-note {
