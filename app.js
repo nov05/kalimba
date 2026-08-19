@@ -116,18 +116,18 @@ function openPDF(pdf) {
     window.open(pdf, "_blank");
 }
 
-const amazonBox = document.getElementById("amazon-box");
-const amazonClose = document.getElementById("amazon-close");
+const affiliateBox = document.getElementById("affiliate-box");
+const affiliateClose = document.getElementById("affiliate-close");
 
-amazonClose.onclick = function () {
-    amazonBox.style.display = "none";
+affiliateClose.onclick = function () {
+    affiliateBox.style.display = "none";
 };
 
 let isDragging = false;
 let offsetX = 0;
 let offsetY = 0;
 
-amazonBox.addEventListener("mousedown", (e) => {
+affiliateBox.addEventListener("mousedown", (e) => {
     if (
         e.target.closest("a") ||
         e.target.closest("button")
@@ -135,20 +135,20 @@ amazonBox.addEventListener("mousedown", (e) => {
         return;
     }
     isDragging = true;
-    const rect = amazonBox.getBoundingClientRect();
+    const rect = affiliateBox.getBoundingClientRect();
     offsetX = e.clientX - rect.left;
     offsetY = e.clientY - rect.top;
-    amazonBox.style.right = "auto";
-    amazonBox.style.bottom = "auto";
-    amazonBox.style.left = rect.left + "px";
-    amazonBox.style.top = rect.top + "px";
+    affiliateBox.style.right = "auto";
+    affiliateBox.style.bottom = "auto";
+    affiliateBox.style.left = rect.left + "px";
+    affiliateBox.style.top = rect.top + "px";
 });
 
 document.addEventListener("mousemove", (e) => {
     if (!isDragging) return;
-    amazonBox.style.left =
+    affiliateBox.style.left =
         e.clientX - offsetX + "px";
-    amazonBox.style.top =
+    affiliateBox.style.top =
         e.clientY - offsetY + "px";
 });
 
